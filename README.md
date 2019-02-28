@@ -62,14 +62,14 @@ go get github.com/jinzhu/gorm
 This command will pull source from GitHub repository and put it inside $GOPATH/src. This will also download other dependency packages of gorm and install under src directory.
 
 You will obtain the follow directory structure <br/>
-![dir-struc](https://github.com/LuisDio/golang-project/blob/master/images/dir-struct.png)
-https://github.com/LuisDio/golang-project/edit/master/README.md
+
+![dir-struc](https://raw.githubusercontent.com/LuisDio/golang-project/master/images/dir-struct.png)
 
 After package and dependencies are downloaded, Go will compile package and create single package object file in $GOPATH/pkg directory under same directory structure of package.
 
 ## 4. Create binaries
 
-Create a file **main.go** and put the code below.
+Create a folder **shape** within the src folder. add a **main.go** and put the code below.
 ```
 package main
 
@@ -81,9 +81,14 @@ func main(){
 ```
 Then run the command
 ```
->go install main.go
->main
+>go install shape
+>shape
 ```
+You will obtain such a directory struct
+
+![dir-struc](https://raw.githubusercontent.com/LuisDio/golang-project/master/images/dir-struct1.png)
+
+It doesn’t matter, from where you execute ```go install shape``` command, Go knows where shape package is (from **GOPATH** environment variable). Hence, a binary file is generate inside bin directory. Since, this bin directory is in our PATH, we can execute these binary file just by it’s filename as command.
 
 
 
