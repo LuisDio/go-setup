@@ -62,7 +62,7 @@ go get github.com/jinzhu/gorm
 This command will pull source from GitHub repository and put it inside $GOPATH/src. This will also download other dependency packages of gorm and install under src directory.
 
 You will obtain the follow directory structure <br/>
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![dir-struc](https://github.com/LuisDio/golang-project/blob/master/images/dir-struct.png)
 https://github.com/LuisDio/golang-project/edit/master/README.md
 
 After package and dependencies are downloaded, Go will compile package and create single package object file in $GOPATH/pkg directory under same directory structure of package.
