@@ -1,10 +1,10 @@
 # golang-project
 
-## Golang installation and Setup for ubuntu 16.04
+## Golang installation and Setup for macOs
 
 When you install Go on your system, it creates a directory /usr/local/go in UNIX or c:/go in Windows. Then it copies all necessary code and binaries needed for Go to function in this directory.
 
-** ***Generally, you don’t need to setup GOROOT environment variable. I recommend not to modify/use GOROOT variable anywhere unless it is absolutely necessary.*** **
+***Generally, you don’t need to setup GOROOT environment variable. I recommend not to modify/use GOROOT variable anywhere unless it is absolutely necessary.***
 
 **```$GOROOT/src```**  is the direcory where packages are found such the **Standard Library package** <br/>
 If package is not present there, then Go refers to system's environment variable ```GOPATH```.<br>
@@ -39,10 +39,55 @@ You can output a binary file from a Go program or package using ```go build <pac
 
 ## 1. Setup your environment variable
 ```
-export GOPATH=/home/$USER/go_workspaces/
+export GOPATH=/home/$USER/go_workspaces/main
 export GOBIN=$GOPATH/bin
+
 PATH=$PATH:$GOPATH:$GOBIN
 export PATH
+```
+Setting ```GOBIN``` environment variable is not necessary, but since bin directory of a workspace will be in our PATH, it’s good idea set it for simplicity.
+
+## 2. Make sure, $GOPATH and $GOBIN is set
+```
+>echo $GOROOT
+>echo $GOPATH
+>echo $GOBIN
+```
+There is no need to set GOROOT environment variables as we are using default installation directory
+
+## 3. Installing 3rd party package
+```
+go get github.com/jinzhu/gorm
+```
+This command will pull source from GitHub repository and put it inside $GOPATH/src. This will also download other dependency packages of gorm and install under src directory.
+
+You will obtain the follow directory structure <br/>
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+https://github.com/LuisDio/golang-project/edit/master/README.md
+
+After package and dependencies are downloaded, Go will compile package and create single package object file in $GOPATH/pkg directory under same directory structure of package.
+
+## 4. Create binaries
+
+Create a file **main.go** and put the code below.
+```
+package main
+
+import "fmt"
+
+func main(){
+  fmt.Println("Hello Go")
+}
+```
+Then run the command
+```
+>go install main.go
+>main
+```
+
+
+
+
 
 
 
