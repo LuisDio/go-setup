@@ -2,6 +2,10 @@
 
 ## Golang installation and Setup for ubuntu 16.04
 
+When you install Go on your system, it creates a directory /usr/local/go in UNIX or c:/go in Windows. Then it copies all necessary code and binaries needed for Go to function in this directory.
+
+** ***Generally, you don’t need to setup GOROOT environment variable. I recommend not to modify/use GOROOT variable anywhere unless it is absolutely necessary.*** **
+
 **```$GOROOT/src```**  is the direcory where packages are found such the **Standard Library package** <br/>
 If package is not present there, then Go refers to system's environment variable ```GOPATH```.<br>
 
@@ -34,6 +38,11 @@ You can output a binary file from a Go program or package using ```go build <pac
 
 
 ## 1. Setup your environment variable
+```
+export GOPATH=/home/$USER/go_workspaces/
+export GOBIN=$GOPATH/bin
+PATH=$PATH:$GOPATH:$GOBIN
+export PATH
 
 
 
