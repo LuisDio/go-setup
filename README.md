@@ -2,6 +2,8 @@
 
 ## Golang installation and Setup for macOs
 
+First, download the latest 64 bit macOs package from the download page. 
+
 When you install Go on your system, it creates a directory /usr/local/go in UNIX or c:/go in Windows. Then it copies all necessary code and binaries needed for Go to function in this directory.
 
 ***Generally, you don’t need to setup GOROOT environment variable. I recommend not to modify/use GOROOT variable anywhere unless it is absolutely necessary.***
@@ -88,7 +90,9 @@ You will obtain such a directory struct
 
 ![dir-struc](https://raw.githubusercontent.com/LuisDio/golang-project/master/images/dir-struct1.png)
 
-It doesn’t matter, from where you execute ```go install shape``` command, Go knows where shape package is (from **GOPATH** environment variable). Hence, a binary file is generate inside bin directory. Since, this bin directory is in our PATH, we can execute these binary file just by it’s filename as command.
+
+It doesn’t matter, from where you execute ```go install shape``` command, Go knows where shape package is (from **GOPATH** environment variable). Hence, a binary file is generate inside bin directory. <br/>
+Since, this bin directory is in our PATH, we can execute these binary file just by it’s filename as command.
 
 
 
